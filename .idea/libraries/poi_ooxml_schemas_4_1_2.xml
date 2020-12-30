@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="poi-ooxml-schemas-4.1.2">
+    <CLASSES>
+      <root url="jar://F:/2020-12-28/2020-12-26/poi/poi-ooxml-schemas-4.1.2.jar!/" />
+      <root url="jar://F:/2020-12-28/2020-12-26/poi/xmlbeans-3.1.0.jar!/" />
+      <root url="jar://F:/2020-12-28/2020-12-26/poi/poi-ooxml-4.1.2.jar!/" />
+      <root url="jar://F:/2020-12-28/2020-12-26/poi/poi-4.1.2.jar!/" />
+      <root url="jar://F:/2020-12-28/2020-12-26/poi/commons-compress-1.19.jar!/" />
+      <root url="jar://F:/2020-12-28/2020-12-26/poi/commons-collections4-4.4.jar!/" />
+      <root url="file://F:/2020-12-28/2020-12-26/poi" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://F:/2020-12-28/2020-12-26/poi" recursive="false" />
+  </library>
+</component>

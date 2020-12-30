@@ -39,6 +39,37 @@ public class ReadProductExcel {
         }
         return users;
     }
+    public Product getProductById(String id,InputStream in) {
+        try {
+            XSSFWorkbook xw = new XSSFWorkbook(in);
+            XSSFSheet xs = xw.getSheetAt(0);
+            for (int j = 1; j <= xs.getLastRowNum(); j++) {
+                XSSFRow row = xs.getRow(j);
+                Product product = new Product();
+                for (int k = 0; k <= row.getLastCellNum(); k++) {
+                    XSSFCell cell = row.getCell(k);
+                    if (cell == null)
+                        continue;
+                    if (k == 0) {
+                        product.setpId(this.getValue(cell));
+                    } else if (k == 1) {
+                        product.setpName(this.getValue(cell));
+                    } else if (k == 2) {
+                        product.setPrice(this.getValue(cell));//把字符串转Float
+                    } else if (k == 3) {
+                        product.setpDesc(this.getValue(cell));
+                    }
+                }
+                if(id.equals(product.getpId())){
+                    return product;
+                }
+                //如果id（手动输入的）和product的id（从电子表格里读出来的）一致，则表示找到了该商品，然后返回该商品即可
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;//如果找不到就返回空
+    }
 
     private String getValue(XSSFCell cell) {
         String value;
