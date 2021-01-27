@@ -16,7 +16,7 @@ public class CreateOrder {
     /**
      * Excel 文件要存放的位置，假定在F盘下
      */
-    public static String outputFile = "/Users/liwei/Desktop/Orders.xls";
+    public static String outputFile = "E:/Orders.xls";
 
     public static void createOrder(Order order) {
         try {
