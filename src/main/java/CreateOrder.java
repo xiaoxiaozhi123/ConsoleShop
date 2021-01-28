@@ -54,21 +54,25 @@ public class CreateOrder {
                 HSSFRow row = sheet.createRow((short) i + 1);
                 for (int j = 0; j < 6; j++) {
                     HSSFCell cell = row.createCell((short) j);
-                    int pId=Integer.parseInt(order.getProducts()[i].getId());
+                    int pId = Integer.parseInt(order.getProducts()[i].getId());
                     // 在单元格中输入一些内容
                     if (j == 0) {
                         cell.setCellValue(order.getUser().getUsername());
                         //cell.setCellStyle(style);//设置背景色
                     } else if (j == 1) {
                         cell.setCellValue(pId);
-                    } else if(j==2){
+                    } else if (j == 2) {
                         /*
                         遍历Map
                          */
                         // 目录(key)内容(value)
-                        Map<Integer,Integer> ammount=order.getAmmount();
-                        int productNum=ammount.get(pId);
+                        Map<Integer, Integer> ammount = order.getAmmount();
+                        int productNum = ammount.get(pId);
                         cell.setCellValue(productNum);
+                    } else if (j == 3) {
+                        Map<Integer, Float> totalAmountPerProduct = order.getTotalAmountPerProduct();
+                        float productTotalPay = totalAmountPerProduct.get(pId);
+                        cell.setCellValue(productTotalPay);
                     }
                 }
             }

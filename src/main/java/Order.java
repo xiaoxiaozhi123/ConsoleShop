@@ -10,8 +10,8 @@ public class Order {
     private Product products[];
     private Map<Integer,Integer> ammount;//无法表达出买了几个哪种商品
     //商品，个数
-    private float totalPay;
-    private float actualPay;
+    private Map<Integer,Float> totalAmountPerProduct;
+    private float actualPay;//实付款
     private Date orderDate;
 
     public User getUser() {
@@ -38,13 +38,14 @@ public class Order {
         this.ammount = ammount;
     }
 
-    public float getTotalPay() {
-        return totalPay;
+    public Map<Integer, Float> getTotalAmountPerProduct() {
+        return totalAmountPerProduct;
     }
 
-    public void setTotalPay(float totalPay) {
-        this.totalPay = totalPay;
+    public void setTotalAmountPerProduct(Map<Integer, Float> totalAmountPerProduct) {
+        this.totalAmountPerProduct = totalAmountPerProduct;
     }
+
 
     public float getActualPay() {
         return actualPay;
