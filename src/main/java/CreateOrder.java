@@ -85,6 +85,7 @@ public class CreateOrder {
             fOut.close();
             System.out.println("文件生成...");
         } catch (Exception e) {
+			e.printStackTrace();
             System.out.println("已运行 xlCreate() : " + e);
         }
     }
